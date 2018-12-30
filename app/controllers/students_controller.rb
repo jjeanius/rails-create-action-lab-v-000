@@ -6,6 +6,10 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def show
+    @student = Student.find(params[:id])
+  end
+
   def new
   end
 
@@ -15,9 +19,6 @@ class StudentsController < ApplicationController
     redirect_to student_url(@student)
   end
 
-  def show
-    @student = Student.find(params[:id])
-  end
 
 
 end
